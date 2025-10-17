@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import MouseParticles from "@/components/MouseParticles";
+import MagneticElements from "@/components/MagneticElements";
 
 export const metadata: Metadata = {
   title: "Billal Hossan | Flutter Developer & Software Engineer",
@@ -39,7 +41,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased bg-gradient-to-br from-gray-900 via-black to-blue-900 min-h-screen">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <MouseParticles />
+          <MagneticElements />
+        </ThemeProvider>
       </body>
     </html>
   );
